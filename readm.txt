@@ -1,0 +1,13 @@
+# Détection de Programmes Malveillants
+
+## Description
+Ce projet vise à détecter si un fichier est légitime ou malveillant en fonction de certaines caractéristiques techniques.
+
+## Structure du Projet
+- `Dataset/` : Contient les fichiers de données.
+- `Models/` : Contient le modèle entraîné.
+- `training.py` : Script pour entraîner et sauvegarder le modèle.
+- `app.py` : Application Streamlit pour prédire les résultats.
+
+## Instructions
+1. **Installer les dépendances** :
