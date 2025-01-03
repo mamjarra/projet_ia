@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 import pandas as pd
-import numpy as np
+import numpy as np  # Import ajouté pour résoudre l'erreur
 from sklearn.preprocessing import StandardScaler
 import os
 import tensorflow as tf
@@ -55,16 +55,13 @@ def user_input():
 # ✅ Données d'entrée utilisateur
 input_data = user_input()
 
-# ✅ Vérification des colonnes avant normalisation
-columns_to_normalize = ['AddressOfEntryPoint', 'ResourceSize', 'SizeOfStackReserve']
-for col in columns_to_normalize:
-    if col not in input_data.columns:
-        st.error(f"⚠️ La colonne '{col}' est manquante dans les données saisies.")
-        st.stop()
-
 # ✅ Normalisation avec le scaler pré-entrainé
+columns_to_normalize = ['AddressOfEntryPoint', 'ResourceSize', 'SizeOfStackReserve']
 try:
     input_data[columns_to_normalize] = scaler.transform(input_data[columns_to_normalize])
+except KeyError as e:
+    st.error(f"⚠️ Problème avec les colonnes à normaliser : {e}")
+    st.stop()
 except Exception as e:
     st.error(f"⚠️ Erreur lors de la normalisation : {e}")
     st.stop()
