@@ -1,13 +1,14 @@
-# Détection de Programmes Malveillants
+# 📚 Détection de Malware avec Attaques Adversariales
 
-## Description
-Ce projet vise à détecter si un fichier est légitime ou malveillant en fonction de certaines caractéristiques techniques.
+## 🚀 **Description du Projet**
+Ce projet vise à détecter les logiciels malveillants avec un modèle robuste face aux attaques adversariales (**FGSM, PGD, DeepFool**) et amélioré grâce à **SMOTE**.
 
-## Structure du Projet
-- `Dataset/` : Contient les fichiers de données.
-- `Models/` : Contient le modèle entraîné.
-- `training.py` : Script pour entraîner et sauvegarder le modèle.
-- `app.py` : Application Streamlit pour prédire les résultats.
+## 🛠️ **Technologies Utilisées**
+- Python (Scikit-learn, TensorFlow, Keras)
+- SMOTE pour équilibrer les classes
+- Streamlit pour le déploiement
 
-## Instructions
-1. **Installer les dépendances** :
+## ▶️ **Exécution du Projet**
+1. **Entraînement du Modèle :**
+   ```bash
+   python train_model.py
